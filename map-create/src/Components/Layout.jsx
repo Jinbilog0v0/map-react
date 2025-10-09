@@ -10,11 +10,11 @@ export default function Layout({ filter, setFilter, filteredItems }) {
   return (
     <div className="min-h-screen grid grid-rows-[auto_auto_1fr] bg-white overflow-y-auto">
       <header className="w-full bg-white px-4 py-4 sm:py-6 shadow-sm sticky top-0 z-50 border-b border-[#009246]/20">
-        <h1 className="text-xl sm:text-2xl md:text-3xl text-center font-semibold text-[#009246]">
+        <h1 className="text-xl sm:text-2xl md:text-3xl text-center font-bold text-[#009246]">
           City Explorer Pro
         </h1>
         <div className="text-center">
-          <h3 className="text-xs sm:text-sm md:text-base font-extralight mt-1 text-[#009246]/80">By Techweave</h3>
+          <h3 className="text-xs sm:text-sm md:text-base font-semibold mt-1 text-gray-500">By Techweave</h3>
         </div>
       </header>
 

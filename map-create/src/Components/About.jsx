@@ -1,8 +1,8 @@
 export default function About() {
   return (
     <div className="flex flex-col items-center justify-start px-8 text-center">
-      <h2 className="text-3xl font-bold mb-6">
-        About <span className="text-blue-600">City Explorer Pro</span>
+      <h2 className="text-black text-3xl font-bold mb-6">
+        About <span className="text-green-700">City Explorer Pro</span>
       </h2>
 
       <p className="max-w-2xl text-gray-700 leading-relaxed mb-8">
@@ -13,9 +13,9 @@ export default function About() {
         all in one place.
       </p>
 
-      <div className="bg-gray-100 rounded-2xl shadow-md p-6 max-w-lg mb-8">
-        <h3 className="text-2xl font-semibold mb-3">Our Mission</h3>
-        <p className="text-gray-700 leading-relaxed">
+      <div className="bg-green-700 rounded-2xl shadow-md p-6 max-w-lg mb-8">
+        <h3 className="text-white text-2xl font-semibold mb-3">Our Mission</h3>
+        <p className="text-white leading-relaxed">
           To make city exploration simple, informative, and inspiring —
           empowering travelers and locals alike to experience the Philippines
           like never before.

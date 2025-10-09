@@ -55,7 +55,7 @@ function Card({ cities }) {
         {filteredCities.map((city) => (
           <motion.li
             key={city.id}
-            className="w-full max-w-[310px] mx-auto h-[250px] flex flex-col justify-end p-4 shadow-lg border border-[#009246]/20 bg-white rounded-xl hover:scale-105 transition duration-300 ease-in-out"
+            className="w-full max-w-[310px] mx-auto h-[250px] flex flex-col justify-end p-4 shadow-lg border border-[#009246]/20 bg-green-700 text-white rounded-xl hover:scale-105 transition duration-300 ease-in-out"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}

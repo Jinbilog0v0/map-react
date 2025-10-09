@@ -110,7 +110,7 @@ function Attractions() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="bg-white rounded-xl shadow-md overflow-hidden border border-[#009246]/20 hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-[1.02]"
+            className="bg-green-700 rounded-xl shadow-md overflow-hidden border border-[#009246]/20 hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-[1.02]"
             onClick={() => handleAttractionClick(attraction)}
           >
             <div className="relative h-48">
@@ -125,11 +125,11 @@ function Attractions() {
             </div>
             <div className="p-4">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-[#009246] font-medium">{attraction.cityName}</span>
-                <span className="text-sm text-gray-600">{attraction.region}</span>
+                <span className="text-white font-medium">{attraction.cityName}</span>
+                <span className="text-sm text-white">{attraction.region}</span>
               </div>
               {attraction.description && (
-                <p className="text-gray-600 text-sm line-clamp-2">
+                <p className="text-gray-400 text-sm line-clamp-2">
                   {attraction.description}
                 </p>
               )}
@@ -155,7 +155,7 @@ function Attractions() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="bg-white rounded-xl overflow-hidden max-w-4xl w-full max-h-[90vh] shadow-xl"
+              className="bg-green-700 rounded-xl overflow-hidden max-w-4xl w-full max-h-[90vh] shadow-xl"
             >
               <div className="relative h-[40vh]">
                 <img
@@ -173,16 +173,16 @@ function Attractions() {
               <div className="p-6 overflow-y-auto max-h-[50vh]">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h2 className="text-2xl font-bold text-[#009246] mb-1">{selectedAttraction.name}</h2>
-                    <p className="text-gray-600">Located in {selectedAttraction.cityName}, {selectedAttraction.region}</p>
+                    <h2 className="text-2xl font-bold text-white mb-1">{selectedAttraction.name}</h2>
+                    <p className="text-green-200">Located in {selectedAttraction.cityName}, {selectedAttraction.region}</p>
                   </div>
                 </div>
                 
                 <div className="space-y-4">
                   {selectedAttraction.description && (
                     <div>
-                      <h3 className="text-lg font-semibold mb-2">About</h3>
-                      <p className="text-gray-600">{selectedAttraction.description}</p>
+                      <h3 className="text-white text-lg font-semibold mb-2">About</h3>
+                      <p className="text-white">{selectedAttraction.description}</p>
                     </div>
                   )}
                   
