@@ -110,7 +110,7 @@ function Attractions() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="bg-green-700 rounded-xl shadow-md overflow-hidden border border-[#009246]/20 hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-[1.02]"
+            className="bg-white rounded-xl shadow-md overflow-hidden border border-[#009246]/20 hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-[1.02]"
             onClick={() => handleAttractionClick(attraction)}
           >
             <div className="relative h-48">
@@ -125,8 +125,8 @@ function Attractions() {
             </div>
             <div className="p-4">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-white font-medium">{attraction.cityName}</span>
-                <span className="text-sm text-white">{attraction.region}</span>
+                <span className="text-green-700 font-medium">{attraction.cityName}</span>
+                <span className="text-sm text-green-700">{attraction.region}</span>
               </div>
               {attraction.description && (
                 <p className="text-gray-400 text-sm line-clamp-2">
