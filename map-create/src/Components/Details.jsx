@@ -1,70 +1,61 @@
 import { useParams, useNavigate} from "react-router-dom";
 import cities from "../FilterData/Cities";
-import Searchbar from "./Searchbar";
 
 function Details(){
-
   const { id } = useParams();
   const navigate = useNavigate();
   const city = cities.find((c) => c.id === parseInt(id));
+  
   if (!city) {
     return <h1>City not found</h1>;
   }
 
   return (
     <div className="overflow-x-hidden pb-6"> 
-      <div className="relative flex items-center h-[70px] sticky top-0 z-50 bg-white border-b px-4">
+      <div className="flex h-[60px] sm:h-[70px] items-center justify-between px-4 bg-white mb-4">
         <button
-          onClick={() => navigate(-1)}
-          className="bg-white text-green-900 px-3 py-2 text-sm sm:text-base rounded-md"
-        >
-          ⮜ Back
+          onClick={() => navigate(-1)} 
+          className="p-2 w-[90px] sm:w-[100px] text-sm sm:text-base bg-[#009246] text-white hover:bg-[#009246]/90 rounded-lg transition duration-300 ease-in-out cursor-pointer">
+          Back
         </button>
 
-        <h1 className="absolute left-1/2 transform -translate-x-1/2 text-2xl font-semibold">
-          City Details
-        </h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#009246]">City Details</h1>
 
-        <button
-          className="ml-auto bg-white text-black px-3 py-2 text-sm sm:text-base rounded-md"
+        <button 
+          type="button"
+          className="p-2 w-[90px] sm:w-[100px] text-sm sm:text-base bg-[#009246] text-white hover:bg-[#009246]/90 rounded-lg transition duration-300 ease-in-out cursor-pointer"
         >
-          🛈
+          Navigation
         </button>
       </div>
-
-      {/* Searchbar
-      <Searchbar /> */}
-
-      
-    <div className="w-full flex justify-center items-center mt-8 px-4">
-      <div className="w-full max-w-[900px] flex flex-col md:flex-row gap-6">
-
-        <img
+  
+    <div className="w-full flex justify-center items-center mt-4 sm:mt-8">
+      <div className="w-full max-w-[900px] flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8">
+          <img 
           src={city.image}
           alt={city.name}
-          className="w-full md:w-[500px] h-[250px] md:h-[400px] object-cover rounded-2xl border-2 border-black"
-        />
+          className="w-full lg:w-[500px] h-[250px] sm:h-[300px] lg:h-[350px] rounded-xl border border-[#009246]/20 hover:scale-[1.02] transition duration-300 ease-in-out object-cover"/>
 
-          <div className="flex flex-col mt-4 md:mt-0">
-            <h2 className="font-bold text-xl">{city.name}</h2>
-
-            <p>Read: {city.detail}</p>
+          {/*Details */}
+          <div className="flex flex-col space-y-3 p-2">
+            <h2 className="font-bold text-lg sm:text-xl text-[#009246]">{city.name}</h2>
+            <p className="text-sm sm:text-base leading-relaxed">{city.detail}</p>
           </div>
       </div>
     </div>
 
 
     {/*Attractions */}
-      <div className="flex flex-col items-center mt-10">
-        <div className="border border-black w-full max-w-[900px] h-[60px] flex items-center justify-center mb-4 px-2">
-        <h1 className="font-bold text-2xl">Top Attractions</h1>
+      <div className="flex flex-col items-center mt-6 sm:mt-10 px-4 sm:px-6">
+        <div className="w-full max-w-[900px] h-[50px] sm:h-[60px] flex items-center justify-center mb-4 border-t border-b border-[#009246]/20">
+          <h1 className="font-bold text-xl sm:text-2xl text-[#009246]">Top Attractions</h1>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 w-full max-w-[900px]">
           {city.attractions?.map((p) =>(
             <div
               key={p.id}
-              className="w-[260px] h-[230px] text-white bg-green-700 border border-black shadow-lg rounded-xl overflow-hidden hover:scale-108 transition ease-in-out"
+              className="w-full max-w-[260px] mx-auto h-[230px] border border-[#009246]/20 shadow-md rounded-xl overflow-hidden hover:scale-[1.02] transition duration-300 ease-in-out bg-white"
             >
               
               <img 
@@ -72,8 +63,8 @@ function Details(){
                 alt={p.name}
                 className="w-full h-[180px] object-cover"
               />
-              <div className="p-2 text-center">
-                <h3>{p.name}</h3>
+              <div className="p-3 text-center">
+                <h3 className="text-sm sm:text-base font-medium text-[#009246]">{p.name}</h3>
               </div>
 
             </div>

@@ -7,23 +7,26 @@
       detail: "Manila, capital and chief city of the Philippines. The city is the centre of the country’s economic, political, social, and cultural activity. It is located on the island of Luzon and spreads along the eastern shore of Manila Bay at the mouth of the Pasig River. The city’s name, originally Maynilad, is derived from that of the nilad plant, a flowering shrub adapted to marshy conditions, which once grew profusely along the banks of the river; the name was shortened first to Maynila and then to its present form. In 1975, by presidential decree, Manila and its contiguous cities and municipalities were integrated to function as a single administrative region, known as Metropolitan Manila (also called the National Capital Region); the Manila city proper encompasses only a small proportion of that area.",
       attractions: [
         {
-        id: 1,
-        name: "Rizal Park",
-        image: "/Images/rizalpark.jpg",
-        
+          id: 1,
+          name: "Rizal Park",
+          image: "/Images/rizalpark.jpg",
+          description: "Rizal Park, also known as Luneta Park, is a historic urban park located in the heart of Manila. It's one of the largest urban parks in Asia and serves as a tribute to Philippine national hero José Rizal.",
+          visitingHours: "Open 24/7"
         },
-       {
-        id: 2,
-        name: "Manila Ocean Park",
-        image: "/Images/manila-ocean.jpg",
-        
-      },
-          {
-        id: 3,
-        name: "Intramuros",
-        image: "/Images/intramuros.jpg",
-        
-    },
+        {
+          id: 2,
+          name: "Manila Ocean Park",
+          image: "/Images/manila-ocean.jpg",
+          description: "Manila Ocean Park is an oceanarium and marine-themed park in Manila. It features various marine life exhibits, shows, and interactive experiences.",
+          visitingHours: "10:00 AM - 8:00 PM"
+        },
+        {
+          id: 3,
+          name: "Intramuros",
+          image: "/Images/intramuros.jpg",
+          description: "Intramuros is the historic walled area within Manila. Known as the 'Walled City', it was the seat of government during the Spanish colonial period and is home to numerous historic sites.",
+          visitingHours: "Open daily, specific sites have varying hours"
+        },
       ],
     },
 

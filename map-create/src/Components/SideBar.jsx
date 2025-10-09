@@ -15,48 +15,32 @@ function SideBar() {
   ];
 
   const baseStyle =
-    "flex w-[200px] h-[50px] border border-black border-t-0 border-l-0 border-r-0 hover:bg-green-900 hover:text-white transition duration-300 ease-in-out p-2 text-lg font-semibold items-center justify-center";
-  const activeStyle = "bg-green-700 text-white";
+    "flex h-[40px] md:h-[50px] border border-[#009246] md:border-t-0 md:border-l-0 md:border-r-0 hover:bg-[#009246] hover:text-white hover:scale-100 transition duration-300 ease-in-out p-2 font-semibold items-center justify-center rounded-md md:rounded-none";
+  const activeStyle = "bg-[#009246] text-white";
 
   return (
-    <>
-      <button
-        className="fixed top-[30px] left-4 z-50 p-2 bg-green-700 text-white rounded-md md:hidden"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
-
-      <div
-        className={`fixed top-0 left-0 h-full bg-white border-r-2 border-r-black transition-transform duration-300 ease-in-out z-40
-        ${isOpen ? "translate-x-0" : "-translate-x-full"} 
-        md:translate-x-0 md:static md:w-[250px]`}
-      >
-        <ul className="flex flex-col justify-center items-center mt-16 md:mt-8">
-          {menuItems.map((item, index) => (
-            <li key={index} className="flex w-full justify-center">
-              <NavLink
-                to={item.path}
-                className={({ isActive }) =>
-                  `${baseStyle} ${
-                    isActive ||
-                    (location.pathname === "/" && item.path === "/")
-                      ? activeStyle
-                      : ""
-                  }`
-                }
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-        <div className="text-center p-15 text-sm text-gray-600 border-t border-gray-300">
-          All Rights Reserved © TechWeave 2025
-        </div>
-      </div>
-    </>
+    <nav className="bg-white">
+      <ul className="flex flex-row md:flex-col items-center justify-around md:justify-start w-full py-2 md:py-4 px-2 md:px-0 gap-1 md:gap-2">
+        {menuItems.map((item, index) => (
+          <li key={index} className="flex w-full max-w-[120px] md:max-w-full justify-center">
+            <NavLink
+              to={item.path}
+              className={({ isActive }) =>
+                `${baseStyle} 
+                ${
+                  isActive || (location.pathname === "/" && item.path === "/")
+                    ? activeStyle
+                    : "hover:bg-[#009246] hover:text-white"
+                } 
+                text-sm md:text-base w-full transition-all duration-300`
+              }
+            >
+              {item.name}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }
 
