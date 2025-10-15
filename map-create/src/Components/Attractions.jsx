@@ -10,7 +10,7 @@ function Attractions() {
   const [selectedAttraction, setSelectedAttraction] = useState(null);
 
   // Collect all attractions from all cities
-  const allAttractions = cities.flatMap(city => 
+  const allAttractions = cities.flatMap(city =>
     (city.attractions || []).map(attraction => ({
       ...attraction,
       cityName: city.name,
@@ -24,7 +24,7 @@ function Attractions() {
   const filteredAttractions = allAttractions
     .filter(attraction => {
       const matchesSearch = attraction.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           attraction.cityName.toLowerCase().includes(searchTerm.toLowerCase());
+        attraction.cityName.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesRegion = selectedRegion === 'all' || attraction.region === selectedRegion;
       return matchesSearch && matchesRegion;
     })
@@ -79,7 +79,7 @@ function Attractions() {
               <option value="Mindanao">Mindanao</option>
             </select>
           </div>
-          
+
           <div className="flex items-center gap-2">
             <span className="text-gray-600">Sort by:</span>
             <div className="flex gap-2">
@@ -87,11 +87,10 @@ function Attractions() {
                 <button
                   key={option}
                   onClick={() => setSortBy(option)}
-                  className={`px-4 py-2 rounded-lg text-sm transition-colors ${
-                    sortBy === option
-                      ? 'bg-[#009246] text-white'
-                      : 'bg-white text-gray-600 border border-[#009246]/20 hover:border-[#009246]'
-                  }`}
+                  className={`px-4 py-2 rounded-lg text-sm transition-colors ${sortBy === option
+                    ? 'bg-[#009246] text-white'
+                    : 'bg-white text-gray-600 border border-[#009246]/20 hover:border-[#009246]'
+                    }`}
                 >
                   {option.charAt(0).toUpperCase() + option.slice(1)}
                 </button>
@@ -150,54 +149,60 @@ function Attractions() {
       {/* Detailed View Modal */}
       <AnimatePresence>
         {selectedAttraction && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-3 sm:p-4 z-50">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="bg-green-700 rounded-xl overflow-hidden max-w-4xl w-full max-h-[90vh] shadow-xl"
+              className="relative bg-white rounded-xl overflow-hidden w-full max-w-5xl max-h-[90vh] shadow-2xl grid grid-cols-1 md:grid-cols-2"
             >
-              <div className="relative h-[40vh]">
+              <button
+                onClick={closeModal}
+                className="absolute top-3 right-3 bg-black/50 text-white w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center hover:bg-black/70 transition-colors z-20"
+              >
+                ✕
+              </button>
+
+              <div className="relative w-full h-60 sm:h-80 md:h-auto flex items-center justify-center bg-gray-100">
                 <img
                   src={selectedAttraction.image}
                   alt={selectedAttraction.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover md:object-contain"
+                  loading="lazy"
                 />
-                <button
-                  onClick={closeModal}
-                  className="absolute top-4 right-4 bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/70 transition-colors"
-                >
-                  ✕
-                </button>
               </div>
-              <div className="p-6 overflow-y-auto max-h-[50vh]">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h2 className="text-2xl font-bold text-white mb-1">{selectedAttraction.name}</h2>
-                    <p className="text-green-200">Located in {selectedAttraction.cityName}, {selectedAttraction.region}</p>
-                  </div>
+
+              <div className="p-5 sm:p-6 overflow-y-auto max-h-[50vh] md:max-h-none">
+                <div className="mb-4">
+                  <h2 className="text-xl sm:text-2xl font-bold text-[#009246] mb-1">
+                    {selectedAttraction.name}
+                  </h2>
                 </div>
-                
+
                 <div className="space-y-4">
                   {selectedAttraction.description && (
                     <div>
-                      <h3 className="text-white text-lg font-semibold mb-2">About</h3>
-                      <p className="text-white">{selectedAttraction.description}</p>
+                      <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                        {selectedAttraction.description}
+                      </p>
                     </div>
                   )}
-                  
-                  {/* Additional details can be added here */}
+
+                  {/* Quick Info Box */}
                   <div className="bg-gray-50 rounded-lg p-4 space-y-2">
                     <h3 className="text-lg font-semibold">Quick Info</h3>
                     <p className="text-gray-600">
-                      <span className="font-medium">Region:</span> {selectedAttraction.region}
+                      <span className="font-medium">Region:</span>{" "}
+                      {selectedAttraction.region}
                     </p>
                     <p className="text-gray-600">
-                      <span className="font-medium">City:</span> {selectedAttraction.cityName}
+                      <span className="font-medium">City:</span>{" "}
+                      {selectedAttraction.cityName}
                     </p>
                     {selectedAttraction.visitingHours && (
                       <p className="text-gray-600">
-                        <span className="font-medium">Visiting Hours:</span> {selectedAttraction.visitingHours}
+                        <span className="font-medium">Visiting Hours:</span>{" "}
+                        {selectedAttraction.visitingHours}
                       </p>
                     )}
                   </div>
@@ -207,6 +212,8 @@ function Attractions() {
           </div>
         )}
       </AnimatePresence>
+
+
     </div>
   );
 }

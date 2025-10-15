@@ -51,7 +51,7 @@ function Favorites() {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-[#009246]"
+                className="h-6 w-6 text-[#df2323]"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

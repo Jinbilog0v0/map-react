@@ -10,7 +10,7 @@ function Filter({ filter, setFilter }) {
           onClick={() => setFilter(region)}
           className={`w-[calc(50%-0.75rem)] sm:w-[120px] h-[45px] sm:h-[50px] border transition duration-300 ease-in-out font-medium 
           rounded-2xl shadow-md border-[#009246]/20 cursor-pointer text-sm sm:text-base
-          hover:scale-105 
+          hover:scale-105 text-[#009246] 
           ${filter === region ? "bg-[#009246] text-white scale-105" : "bg-white hover:bg-[#009246] hover:text-white hover:scale-105"}`}
           >
             {region.charAt(0).toUpperCase() + region.slice(1)}

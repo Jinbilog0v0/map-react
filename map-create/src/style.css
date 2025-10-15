@@ -1,12 +1,10 @@
 @import 'tailwindcss';
 
-/* Ensure consistent scrollbar presence */
 html {
   overflow-y: scroll;
   scrollbar-gutter: stable;
 }
 
-/* Optional: Style the scrollbar to be less intrusive */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -24,7 +22,34 @@ html {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Ensure content doesn't shift */
 * {
   scrollbar-gutter: stable;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 146, 70, 0.3); /* Using your green color with opacity */
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 146, 70, 0.5);
+}
+
+/* Remove main page scrollbar */
+body {
+  overflow: scroll;
+}
+
+/* Ensure content containers don't scroll */
+#root {
+  height: 100vh;
+  overflow: scroll;
 }

@@ -14,7 +14,7 @@ export default function Layout({ filter, setFilter, filteredItems }) {
           City Explorer Pro
         </h1>
         <div className="text-center">
-          <h3 className="text-xs sm:text-sm md:text-base font-semibold mt-1 text-gray-500">By Techweave</h3>
+          <h3 className="text-xs sm:text-sm md:text-base font-extralight mt-1 text-gray-600/80">By Techweave</h3>
         </div>
       </header>
 
@@ -23,7 +23,7 @@ export default function Layout({ filter, setFilter, filteredItems }) {
           <SideBar />
         </div>
 
-        <div className={`px-3 sm:px-4 py-2 sm:py-3 bg-white ${hideSearchBar ? 'hidden' : ''} sticky top-[125px] md:top-[89px] z-30`}>
+        <div className={`px-3 sm:px-4 py-2 sm:py-3 bg-white ${hideSearchBar ? 'hidden' : ''} sticky top-[125px] md:top-[89px] z-30 `}>
           <div className="max-w-3xl mx-auto">
             <Searchbar />
           </div>

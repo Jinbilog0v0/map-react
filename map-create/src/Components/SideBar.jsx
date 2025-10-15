@@ -7,11 +7,10 @@ function SideBar() {
   const location = useLocation();
 
   const menuItems = [
-    { name: "Cities", path: "/" },
-    { name: "Favorites", path: "/favorites" },
-    { name: "Theme", path: "/theme" },
-    { name: "Attractions", path: "/attractions" },
-    { name: "About", path: "/about" },
+    { name: "Cities", path: "/"},
+    { name: "Favorites", path: "/favorites"},
+    { name: "Atrractions", path: "/attractions"},
+    { name: "About", path: "/about"},
   ];
 
   const baseStyle =
@@ -20,26 +19,22 @@ function SideBar() {
 
   return (
     <nav className="bg-white">
-      <ul className="flex flex-row md:flex-col items-center justify-around md:justify-start w-full py-2 md:py-4 px-2 md:px-0 gap-1 md:gap-2">
-        {menuItems.map((item, index) => (
-          <li key={index} className="flex w-full max-w-[120px] md:max-w-full justify-center">
-            <NavLink
-              to={item.path}
-              className={({ isActive }) =>
-                `${baseStyle} 
-                ${
-                  isActive || (location.pathname === "/" && item.path === "/")
-                    ? activeStyle
-                    : "hover:bg-[#009246] hover:text-white"
-                } 
-                text-sm md:text-base w-full transition-all duration-300`
-              }
-            >
-              {item.name}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+            <ul className="flex flex-row md:flex-col items-center justify-around md:justify-start w-full py-2 md:py-4 px-2 md:px-0 gap-1 md:gap-2">
+              {menuItems.map((item, index) => (
+               <li key={index} className="flex w-full max-w-[120px] md:max-w-full justify-center text-[#009246]"> 
+                <NavLink
+                  to={item.path}
+                  className={({isActive}) =>
+                    `${baseStyle} 
+                    ${isActive || (location.pathname === "/" && item.path ==="/") ? activeStyle : "hover:bg-[#009246] hover:text-white"} 
+                    text-sm md:text-base w-full transition-all duration-300`
+                  }
+                >
+                  {item.name}
+                </NavLink> 
+               </li>
+              ))}
+            </ul>
     </nav>
   );
 }
